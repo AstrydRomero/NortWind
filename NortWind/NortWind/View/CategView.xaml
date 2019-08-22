@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NortWind.View.CategView"
+             BackgroundColor="Pink">
+    <ContentPage.Content>
+       
+
+            <StackLayout>
+           
+                <Label Text="DATOS CATEGORIA:"  Font="15" TextColor="Black"></Label>
+            <Label Text="Category Name" Font="10"></Label>
+            <Entry Placeholder="Escribir" x:Name="EntryCategoria"></Entry>   
+            <Entry Placeholder="Descripcion" x:Name="EntryDescripcion"></Entry>
+            <Label Text="DATOS DE LOS PRODUCTOS" TextColor="Black"/>
+          
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Name:" Font="10" ></Label>
+                <Entry Placeholder="Escriba" x:Name="EntryName"/>
+                <Button Text="ADD" x:Name="btnADD" VerticalOptions="End" Clicked="BtnADD_Clicked"/>
+                </StackLayout>
+            <StackLayout>
+                <ScrollView>
+                    <ListView x:Name="ProductosListView" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextCell Text="{Binding Nombre}">
+                                </TextCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                 </ScrollView>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button Text="Ver"  Clicked="Button_Clicked_1" VerticalOptions="Start"></Button>
+                    <Button Text="Guardar" Clicked="Button_Clicked" VerticalOptions="Start"/>
+                
+            </StackLayout>
+            
+        </StackLayout>
+       
+    </ContentPage.Content>
+</ContentPage>
+

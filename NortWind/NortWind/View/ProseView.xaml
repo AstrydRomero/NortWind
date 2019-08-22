@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NortWind.View.ProseView">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" BackgroundColor="Pink">
+
+                <Button Text="Ver Categorias" Clicked="Button_Clicked" />
+                <Button Text="+" Clicked="Button_Clicked_1"></Button>
+
+
+            </StackLayout>
+            <StackLayout BackgroundColor="Pink">
+                <SearchBar x:Name="Buscador" Placeholder="Inserte ID"></SearchBar>
+            </StackLayout>
+
+
+
+            <ListView x:Name="Cat" ItemSelected="Cat_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Categoria}" Detail="{Binding IdCategoria}"></TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+            <ListView x:Name="ProductosListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Nombre}" Detail="{Binding IdCategoria}"></TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
